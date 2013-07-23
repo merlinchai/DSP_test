@@ -702,7 +702,7 @@ main()
 	// Test whether result is 1
 	for(j=0;j<10;j++)
 	{
-		for(i=0; i<24; i++
+		for(i=0; i<24; i++)
 			{
 				test[i]=*(FPGA_IO1_DATA+i);
 			}

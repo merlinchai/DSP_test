@@ -57,7 +57,7 @@ void SetupEPwmUExample(void)  //by yb
    EPwm1Regs.TBCTL.bit.PHSEN = TB_DISABLE;			// Disable phase shift
    EPwm1Regs.TBCTL.bit.PRDLD = TB_SHADOW;			// Use shadow registers when TBPRD changes
    													// ie only update when counter is 0
-   EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1			// Clock ratio to SYSCLKOUT 
+   EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;			// Clock ratio to SYSCLKOUT 
    EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV1;			// Counter clock is same as system clock
 
   // Setup CMPCTL
