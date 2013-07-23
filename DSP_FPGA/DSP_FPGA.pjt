@@ -1,0 +1,78 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="DSP2833x"
+ProjectDir="D:\DSP+FPGA\DSP_FPGA\"
+ProjectType=Executable
+CPUFamily=TMS320C28XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\CCStudio_v3.3\C2000\cgtools\lib\rts2800_fpu32.lib"
+Source="..\DSP2833x_common\lib\IQmath_fpu32.lib"
+Source="..\DSP2833x_common\lib\rts2800_fpu32_fast_supplement.lib"
+Source="..\DSP2833x_common\source\DSP2833x_Adc.c"
+Source="..\DSP2833x_common\source\DSP2833x_ADC_cal.asm"
+Source="..\DSP2833x_common\source\DSP2833x_CodeStartBranch.asm"
+Source="..\DSP2833x_common\source\DSP2833x_CpuTimers.c"
+Source="..\DSP2833x_common\source\DSP2833x_CSMPasswords.asm"
+Source="..\DSP2833x_common\source\DSP2833x_DefaultIsr.c"
+Source="..\DSP2833x_common\source\DSP2833x_EPwm.c"
+Source="..\DSP2833x_common\source\DSP2833x_Gpio.c"
+Source="..\DSP2833x_common\source\DSP2833x_I2C.c"
+Source="..\DSP2833x_common\source\DSP2833x_MemCopy.c"
+Source="..\DSP2833x_common\source\DSP2833x_PieCtrl.c"
+Source="..\DSP2833x_common\source\DSP2833x_PieVect.c"
+Source="..\DSP2833x_common\source\DSP2833x_Sci.c"
+Source="..\DSP2833x_common\source\DSP2833x_SysCtrl.c"
+Source="..\DSP2833x_common\source\DSP2833x_usDelay.asm"
+Source="..\DSP2833x_common\source\DSP2833x_Xintf.c"
+Source="..\DSP2833x_headers\source\DSP2833x_GlobalVariableDefs.c"
+Source="DSP_FPGA.c"
+Source="..\DSP2833x_common\cmd\28335_RAM_lnk.cmd"
+Source="..\DSP2833x_headers\cmd\DSP2833x_Headers_nonBIOS.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -pdr -fr"D:\DSP+FPGA\DSP_FPGA\Debug" -fs"D:\DSP+FPGA\DSP_FPGA\Debug" -i"D:\DSP+FPGA\DSP2833x_headers\include" -i"D:\DSP+FPGA\DSP2833x_common\include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"D:\DSP+FPGA\DSP_FPGA\Release" -d"LARGE_MODEL" -ml -v28
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v28
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v28
+
+["Linker" Settings: "Debug"]
+Options=-q -c -m".\Debug\DSP_FPGA.map" -o".\Debug\DSP_FPGA.out" -stack0x380 -w -x -i"D:\DSP+FPGA\DSP2833x_common\lib" -priority
+
+["Linker" Settings: "Release"]
+Options=-q -c -o".\Release\Example_2833xFlash.out" -x
+
+["..\..\CCStudio_v3.3\C2000\cgtools\lib\rts2800_fpu32.lib" Settings: "Debug"]
+LinkOrder=3
+
+["..\DSP2833x_common\lib\IQmath_fpu32.lib" Settings: "Debug"]
+LinkOrder=4
+
+["..\DSP2833x_common\lib\rts2800_fpu32_fast_supplement.lib" Settings: "Debug"]
+LinkOrder=2
+
+["..\DSP2833x_common\cmd\28335_RAM_lnk.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["..\DSP2833x_common\cmd\28335_RAM_lnk.cmd" Settings: "Release"]
+LinkOrder=1
+
+["..\DSP2833x_headers\cmd\DSP2833x_Headers_nonBIOS.cmd" Settings: "Debug"]
+LinkOrder=5
+
+["..\DSP2833x_headers\cmd\DSP2833x_Headers_nonBIOS.cmd" Settings: "Release"]
+LinkOrder=1
+
